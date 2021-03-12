@@ -13,24 +13,30 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#define CONTACTS_NUMBER 8
+
 #include <iostream>
+#include <iomanip>
 
-class phoneBook
-{
+class Contact{
 private:
-    /* data */
+	std::string	firstName;
+	std::string lastName;
+	std::string nickName;
+	std::string login;
+	std::string postalAddress;
+	std::string emailAddress;
+	std::string phoneNumber;
+	std::string birthdayDate;
+	std::string favoriteMeal;
+	std::string underwearColor;
+	std::string darkestSecret;
 public:
-    phoneBook(/* args */);
-    ~phoneBook();
+	bool		empty;
+	Contact();
+	~Contact();
+	std::string getVariable(std::string str) const;
+	void setVariable(std::string str, std::string setValue);
 };
-
-phoneBook::phoneBook(/* args */)
-{
-}
-
-phoneBook::~phoneBook()
-{
-}
-
 
 #endif

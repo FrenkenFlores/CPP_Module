@@ -19,10 +19,10 @@ OBJS = ${SRCS:.c=.o}
 
 all: $(NAME)
 
-NAME: $(SRC)
+$(NAME): $(SRCS)
 	$(COMPILER) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	rm $(NAME)
 
-re: all
+re: clean all

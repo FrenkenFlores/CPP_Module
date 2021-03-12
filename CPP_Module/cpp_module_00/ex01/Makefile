@@ -13,17 +13,16 @@
 .PHONY: all clean re
 COMPILER = clang++
 FLAGS = -Wall -Werror -Wextra
-SRCS = phonebook.cpp
+SRCS = main.cpp phonebook.cpp
 HEADER = phonebook.hpp
 NAME = phonebook
-OBJS = ${SRCS:.c=.o}
 
 all: $(NAME)
 
-NAME: $(SRC)
+$(NAME): $(SRCS) $(HEADER)
 	$(COMPILER) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	rm $(NAME)
 
-re: all
+re: clean all

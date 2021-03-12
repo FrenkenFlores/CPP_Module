@@ -12,20 +12,125 @@
 
 #include "phonebook.hpp"
 
-int main(int argc, char **argv)
+Contact::Contact(){
+	this->empty = true;
+	this->firstName.clear();
+	this->lastName.clear();
+	this->nickName.clear();
+	this->login.clear();
+	this->postalAddress.clear();
+	this->emailAddress.clear();
+	this->phoneNumber.clear();
+	this->birthdayDate.clear();
+	this->favoriteMeal.clear();
+	this->underwearColor.clear();
+	this->darkestSecret.clear();
+	return ;
+}
+
+Contact::~Contact(){
+	return ;
+}
+
+std::string Contact::getVariable(std::string str) const{
+	if (str == "firstName")
+		return (this->firstName);
+	else if (str == "lastName")
+		return (this->lastName);
+	else if (str == "nickName")
+		return (this->nickName);
+	else if (str == "login")
+		return (this->login);
+	else if (str == "postalAddress")
+		return (this->postalAddress);
+	else if (str == "emailAddress")
+		return (this->emailAddress);
+	else if (str == "phoneNumber")
+		return (this->phoneNumber);
+	else if (str == "birthdayDate")
+		return (this->birthdayDate);
+	else if (str == "favoriteMeal")
+		return (this->favoriteMeal);
+	else if (str == "underwearColor")
+		return (this->underwearColor);
+	else if (str == "darkestSecret")
+		return (this->darkestSecret);
+	else
+		return ("");
+}
+
+void	Contact::setVariable(std::string str, std::string setValue)
 {
-	std::string input;
-	while (1)
+	if (str == "firstName")
 	{
-		std::cin >> input;
-		if (input == "ADD")
-			std::cout << "ADD" << std::endl;
-		else if (input == "SEARCH")
-			std::cout << "SEARCH" << std::endl;
-		else if (input == "EXIT")
-			exit(0);
-		else
-			std::cout << "COMMAND NOT FOUND"<< std::endl;
+		this->firstName = setValue;
+		if (setValue.length() > 10)
+		{
+			this->firstName.erase(9,(this->firstName.length() - 9));
+			this->firstName.insert(this->firstName.begin()+9, '.');
+		}
+		return;
 	}
-	return (0);
+	else if (str == "lastName")
+	{
+		this->lastName = setValue;
+		if (setValue.length() > 10)
+		{
+			this->lastName.erase(9,(this->lastName.length() - 9));
+			this->lastName.insert(this->lastName.begin()+9, '.');
+		}
+		return;
+	}
+	else if (str == "nickName")
+	{
+		this->nickName = setValue;
+		if (setValue.length() > 10)
+		{
+			this->nickName.erase(9,(this->nickName.length() - 9));
+			this->nickName.insert(this->nickName.begin()+9, '.');
+		}
+		return;
+	}
+	else if (str == "login")
+	{
+		this->login = setValue;
+		return;
+	}
+	else if (str == "postalAddress")
+	{
+		this->postalAddress = setValue;
+		return;
+	}
+	else if (str == "emailAddress")
+	{
+		this->emailAddress = setValue;
+		return;
+	}
+	else if (str == "phoneNumber")
+	{
+		this->phoneNumber = setValue;
+		return;
+	}
+	else if (str == "birthdayDate")
+	{
+		this->birthdayDate = setValue;
+		return;
+	}
+	else if (str == "favoriteMeal")
+	{
+		this->favoriteMeal = setValue;
+		return;
+	}
+	else if (str == "underwearColor")
+	{
+		this->underwearColor = setValue;
+		return;
+	}
+	else if (str == "darkestSecret")
+	{
+		this->darkestSecret = setValue;
+		return;
+	}
+	else
+		return;
 }
