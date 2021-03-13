@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fflores <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 15:50:11 by fflores           #+#    #+#              #
-#    Updated: 2021/03/05 15:50:13 by fflores          ###   ########.fr        #
+#    Updated: 2021/03/13 15:35:34 by fflores          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ COMPILER = clang++
 FLAGS = -Wall -Werror -Wextra
 SRCS = megaphone.cpp
 NAME = megaphone
-OBJS = ${SRCS:.c=.o}
 
 all: $(NAME)
 

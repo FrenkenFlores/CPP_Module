@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fflores <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 18:12:32 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/05 18:12:35 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/13 15:35:29 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 class Contact{
 private:
 	std::string	firstName;
-	std::string lastName;
-	std::string nickName;
-	std::string login;
-	std::string postalAddress;
-	std::string emailAddress;
-	std::string phoneNumber;
-	std::string birthdayDate;
-	std::string favoriteMeal;
-	std::string underwearColor;
-	std::string darkestSecret;
+	std::string	lastName;
+	std::string	nickName;
+	std::string	login;
+	std::string	postalAddress;
+	std::string	emailAddress;
+	std::string	phoneNumber;
+	std::string	birthdayDate;
+	std::string	favoriteMeal;
+	std::string	underwearColor;
+	std::string	darkestSecret;
 public:
 	bool		empty;
 	Contact();

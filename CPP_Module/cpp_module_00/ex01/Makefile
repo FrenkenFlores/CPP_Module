@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fflores <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/05 15:50:11 by fflores           #+#    #+#              #
-#    Updated: 2021/03/05 15:50:13 by fflores          ###   ########.fr        #
+#    Updated: 2021/03/13 15:35:44 by fflores          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean re
 COMPILER = clang++
 FLAGS = -Wall -Werror -Wextra
-SRCS = main.cpp phonebook.cpp
-HEADER = phonebook.hpp
+SRCS = Contact.cpp phonebook.cpp
+HEADER = Contact.hpp
 NAME = phonebook
 
 all: $(NAME)
