@@ -6,25 +6,25 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 18:12:25 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/13 15:35:30 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/13 17:43:51 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Contact.class.hpp"
 
 Contact::Contact(){
 	this->empty = true;
-	this->firstName.clear();
-	this->lastName.clear();
-	this->nickName.clear();
-	this->login.clear();
-	this->postalAddress.clear();
-	this->emailAddress.clear();
-	this->phoneNumber.clear();
-	this->birthdayDate.clear();
-	this->favoriteMeal.clear();
-	this->underwearColor.clear();
-	this->darkestSecret.clear();
+	this->_firstName.clear();
+	this->_lastName.clear();
+	this->_nickName.clear();
+	this->_login.clear();
+	this->_postalAddress.clear();
+	this->_emailAddress.clear();
+	this->_phoneNumber.clear();
+	this->_birthdayDate.clear();
+	this->_favoriteMeal.clear();
+	this->_underwearColor.clear();
+	this->_darkestSecret.clear();
 	return ;
 }
 
@@ -32,103 +32,103 @@ Contact::~Contact(){
 	return ;
 }
 
-std::string Contact::getVariable(std::string str) const{
-	if (str == "firstName")
-		return (this->firstName);
-	else if (str == "lastName")
-		return (this->lastName);
-	else if (str == "nickName")
-		return (this->nickName);
-	else if (str == "login")
-		return (this->login);
-	else if (str == "postalAddress")
-		return (this->postalAddress);
-	else if (str == "emailAddress")
-		return (this->emailAddress);
-	else if (str == "phoneNumber")
-		return (this->phoneNumber);
-	else if (str == "birthdayDate")
-		return (this->birthdayDate);
-	else if (str == "favoriteMeal")
-		return (this->favoriteMeal);
-	else if (str == "underwearColor")
-		return (this->underwearColor);
-	else if (str == "darkestSecret")
-		return (this->darkestSecret);
+std::string Contact::getVariable( std::string str ) const{
+	if (str == "_firstName")
+		return (this->_firstName);
+	else if (str == "_lastName")
+		return (this->_lastName);
+	else if (str == "_nickName")
+		return (this->_nickName);
+	else if (str == "_login")
+		return (this->_login);
+	else if (str == "_postalAddress")
+		return (this->_postalAddress);
+	else if (str == "_emailAddress")
+		return (this->_emailAddress);
+	else if (str == "_phoneNumber")
+		return (this->_phoneNumber);
+	else if (str == "_birthdayDate")
+		return (this->_birthdayDate);
+	else if (str == "_favoriteMeal")
+		return (this->_favoriteMeal);
+	else if (str == "_underwearColor")
+		return (this->_underwearColor);
+	else if (str == "_darkestSecret")
+		return (this->_darkestSecret);
 	else
 		return ("");
 }
 
-void	Contact::setVariable(std::string str, std::string setValue)
+void	Contact::setVariable( std::string str, std::string setValue )
 {
-	if (str == "firstName")
+	if (str == "_firstName")
 	{
-		this->firstName = setValue;
+		this->_firstName = setValue;
 		if (setValue.length() > 10)
 		{
-			this->firstName.erase(9,(this->firstName.length() - 9));
-			this->firstName.insert(this->firstName.begin()+9, '.');
+			this->_firstName.erase(9,(this->_firstName.length() - 9));
+			this->_firstName.insert(this->_firstName.begin()+9, '.');
 		}
 		return;
 	}
-	else if (str == "lastName")
+	else if (str == "_lastName")
 	{
-		this->lastName = setValue;
+		this->_lastName = setValue;
 		if (setValue.length() > 10)
 		{
-			this->lastName.erase(9,(this->lastName.length() - 9));
-			this->lastName.insert(this->lastName.begin()+9, '.');
+			this->_lastName.erase(9,(this->_lastName.length() - 9));
+			this->_lastName.insert(this->_lastName.begin()+9, '.');
 		}
 		return;
 	}
-	else if (str == "nickName")
+	else if (str == "_nickName")
 	{
-		this->nickName = setValue;
+		this->_nickName = setValue;
 		if (setValue.length() > 10)
 		{
-			this->nickName.erase(9,(this->nickName.length() - 9));
-			this->nickName.insert(this->nickName.begin()+9, '.');
+			this->_nickName.erase(9,(this->_nickName.length() - 9));
+			this->_nickName.insert(this->_nickName.begin()+9, '.');
 		}
 		return;
 	}
-	else if (str == "login")
+	else if (str == "_login")
 	{
-		this->login = setValue;
+		this->_login = setValue;
 		return;
 	}
-	else if (str == "postalAddress")
+	else if (str == "_postalAddress")
 	{
-		this->postalAddress = setValue;
+		this->_postalAddress = setValue;
 		return;
 	}
-	else if (str == "emailAddress")
+	else if (str == "_emailAddress")
 	{
-		this->emailAddress = setValue;
+		this->_emailAddress = setValue;
 		return;
 	}
-	else if (str == "phoneNumber")
+	else if (str == "_phoneNumber")
 	{
-		this->phoneNumber = setValue;
+		this->_phoneNumber = setValue;
 		return;
 	}
-	else if (str == "birthdayDate")
+	else if (str == "_birthdayDate")
 	{
-		this->birthdayDate = setValue;
+		this->_birthdayDate = setValue;
 		return;
 	}
-	else if (str == "favoriteMeal")
+	else if (str == "_favoriteMeal")
 	{
-		this->favoriteMeal = setValue;
+		this->_favoriteMeal = setValue;
 		return;
 	}
-	else if (str == "underwearColor")
+	else if (str == "_underwearColor")
 	{
-		this->underwearColor = setValue;
+		this->_underwearColor = setValue;
 		return;
 	}
-	else if (str == "darkestSecret")
+	else if (str == "_darkestSecret")
 	{
-		this->darkestSecret = setValue;
+		this->_darkestSecret = setValue;
 		return;
 	}
 	else

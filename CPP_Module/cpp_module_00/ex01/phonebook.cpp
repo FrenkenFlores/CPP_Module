@@ -6,11 +6,11 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 15:35:47 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/13 15:35:48 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/13 16:13:59 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Contact.class.hpp"
 
 void    addFunction(Contact &contact)
 {
@@ -18,37 +18,37 @@ void    addFunction(Contact &contact)
 	contact.empty = false;
 	std::cout << "first name: ";
 	std::cin >> input;
-	contact.setVariable("firstName", input);
+	contact.setVariable("_firstName", input);
 	std::cout << "last name: ";
 	std::cin >> input;
-	contact.setVariable("lastName", input);
+	contact.setVariable("_lastName", input);
 	std::cout << "nickname: ";
 	std::cin >> input;
-	contact.setVariable("nickName", input);
+	contact.setVariable("_nickName", input);
 	std::cout << "login: ";
 	std::cin >> input;
-	contact.setVariable("login", input);
+	contact.setVariable("_login", input);
 	std::cout << "postal address: ";
 	std::cin >> input;
-	contact.setVariable("input", input);
+	contact.setVariable("_input", input);
 	std::cout << "email address: ";
 	std::cin >> input;
-	contact.setVariable("emailAddress", input);
+	contact.setVariable("_emailAddress", input);
 	std::cout << "phone number: ";
 	std::cin >> input;
-	contact.setVariable("phoneNumber", input);
+	contact.setVariable("_phoneNumber", input);
 	std::cout << "birthday date: ";
 	std::cin >> input;
-	contact.setVariable("birthDay", input);
+	contact.setVariable("_birthDay", input);
 	std::cout << "favorite meal: ";
 	std::cin >> input;
-	contact.setVariable("favoriteMeal", input);
+	contact.setVariable("_favoriteMeal", input);
 	std::cout << "underwear color: ";
 	std::cin >> input;
-	contact.setVariable("underwearColor", input);
+	contact.setVariable("_underwearColor", input);
 	std::cout << "darkest secret: ";
 	std::cin >> input;
-	contact.setVariable("darkestSecret", input);
+	contact.setVariable("_darkestSecret", input);
 	std::cout << "DONE" << std::endl;
 }
 
@@ -62,9 +62,9 @@ void    searchFunction(Contact *contactList)
 		if (contactList[i].empty == 0)
 		{
 			std::cout << std::setw(10) << std::setiosflags(std::ios_base::right) << index << '|';
-			std::cout << std::setw(10) << std::setiosflags(std::ios_base::right) << contactList[i].getVariable("firstName") << '|';
-			std::cout << std::setw(10) << std::setiosflags(std::ios_base::right) << contactList[i].getVariable("lastName") << '|';
-			std::cout << std::setw(10) << std::setiosflags(std::ios_base::right) << contactList[i].getVariable("nickName") << std::endl;
+			std::cout << std::setw(10) << std::setiosflags(std::ios_base::right) << contactList[i].getVariable("_firstName") << '|';
+			std::cout << std::setw(10) << std::setiosflags(std::ios_base::right) << contactList[i].getVariable("_lastName") << '|';
+			std::cout << std::setw(10) << std::setiosflags(std::ios_base::right) << contactList[i].getVariable("_nickName") << std::endl;
 			index++;
 		}
 		i++;
