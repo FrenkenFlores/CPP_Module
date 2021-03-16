@@ -6,12 +6,13 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 20:57:02 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/16 08:15:04 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/16 08:36:39 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
+#include <unistd.h>
 
 #define TEAM_NBR 5
 
@@ -86,12 +87,13 @@ void mortalCombat(Zombie **redZombieTeam, Zombie **blueZombieTeam)
 				blueZombieDied++;
 			}
 		}
+		usleep(500000);
 		index++;
 	}
 	if (blueZombieDied > redZombieDied)
-		std::cout << "Red zombie team won the battle!" << std::endl;
+		std::cout << "\nRed zombie team won the battle!\n" << std::endl;
 	else
-		std::cout << "Blue zombie team won the battle!" << std::endl;
+		std::cout << "\nBlue zombie team won the battle!\n" << std::endl;
 }
 
 int main(void)
