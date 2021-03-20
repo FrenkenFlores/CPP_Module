@@ -56,6 +56,7 @@ void    searchFunction(Contact *contactList)
 {
 	int i = 0;
 	int index = 1;
+	int indexNbr;
 
 	while (i != CONTACTS_NUMBER)
 	{
@@ -71,6 +72,26 @@ void    searchFunction(Contact *contactList)
 	}
 	if (index == 1)
 		std::cout << "NO CONTACTS FOUND" << std::endl;
+	else{
+		std::cout << "CHOOSE CONTACT'S INDEX:";
+		std::cin >> indexNbr;
+		if (indexNbr > index)
+			std::cout << "NO INDEX FOUND" << std::endl;
+		else
+		{
+			std::cout << "First Name: " << contactList[indexNbr - 1].getVariable("_firstName") << std::endl;
+			std::cout << "Last Name: " << contactList[indexNbr - 1].getVariable("_lastName") << std::endl;
+			std::cout << "Nickname: " << contactList[indexNbr - 1].getVariable("_nickName") << std::endl;
+			std::cout << "Login: " << contactList[indexNbr - 1].getVariable("_login") << std::endl;
+			std::cout << "Postal address: " << contactList[indexNbr - 1].getVariable("_postalAddress") << std::endl;
+			std::cout << "Email address: " << contactList[indexNbr - 1].getVariable("_emailAddress") << std::endl;
+			std::cout << "Phone number: " << contactList[indexNbr - 1].getVariable("_phoneNumber") << std::endl;
+			std::cout << "Birthday date: " << contactList[indexNbr - 1].getVariable("_birthdayDate") << std::endl;
+			std::cout << "Favorite meal: " << contactList[indexNbr - 1].getVariable("_favoriteMeal") << std::endl;
+			std::cout << "Underwear color: " << contactList[indexNbr - 1].getVariable("_underwearColor") << std::endl;
+			std::cout << "Darkest secret: " << contactList[indexNbr - 1].getVariable("_darkestSecret") << std::endl;
+		}
+	}
 }
 
 int main(void)
