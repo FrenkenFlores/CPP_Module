@@ -21,11 +21,20 @@ Account::Account( int initial_deposit ){
 	this->_amount = initial_deposit;
 	Account::_totalAmount += initial_deposit;
 	this->_accountIndex = Account::getNbAccounts();
+
+	std::time_t t = std::time(NULL);
+	std::tm *timer = std::localtime(&t);
+	std::cout << '[' << timer->tm_year + 1900 << timer->tm_mon + 1 << timer->tm_mday << "_" << timer->tm_hour << timer->tm_min << timer->tm_sec <<  "] ";
+
 	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ';' << "created" << std::endl;
 	return ;
 }
 
 Account::~Account(){
+	std::time_t t = std::time(NULL);
+	std::tm *timer = std::localtime(&t);
+	std::cout << '[' << timer->tm_year + 1900 << timer->tm_mon + 1 << timer->tm_mday << "_" << timer->tm_hour << timer->tm_min << timer->tm_sec <<  "] ";
+
 	std::cout << "index:" << this->_accountIndex << ";amount" << this->_amount << ';' << "closed" << std::endl;
 	return ;
 }
@@ -47,6 +56,10 @@ int	Account::getNbWithdrawals( void ){
 }
 
 void Account::displayAccountsInfos( void ){
+	std::time_t t = std::time(NULL);
+	std::tm *timer = std::localtime(&t);
+	std::cout << '[' << timer->tm_year + 1900 << timer->tm_mon + 1 << timer->tm_mday << "_" << timer->tm_hour << timer->tm_min << timer->tm_sec <<  "] ";
+
 	std::cout << "accounts:" << Account::getNbAccounts() << ";total:" << Account::getTotalAmount() << ";deposits:" << Account::getNbDeposits() <<  ";withdrawals:" << Account::getNbWithdrawals() << std::endl;
 	Account::_nbAccounts = 0;
 	return ;
@@ -59,6 +72,11 @@ void Account::displayStatus() const{
 		nbWithdrawals = 1;
 	if (this->_nbDeposits > 0)
 		nbDeposits = 1;
+
+	std::time_t t = std::time(NULL);
+	std::tm *timer = std::localtime(&t);
+	std::cout << '[' << timer->tm_year + 1900 << timer->tm_mon + 1 << timer->tm_mday << "_" << timer->tm_hour << timer->tm_min << timer->tm_sec <<  "] ";
+
 	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";deposits:" << nbDeposits <<  ";withdrawals:" << nbWithdrawals << std::endl;
 	return ;
 }
@@ -69,6 +87,11 @@ void Account::makeDeposit( int deposit ){
 	this->_nbDeposits = deposit;
 	this->_amount += deposit;
 	Account::_totalNbDeposits++;
+
+	std::time_t t = std::time(NULL);
+	std::tm *timer = std::localtime(&t);
+	std::cout << '[' << timer->tm_year + 1900 << timer->tm_mon + 1 << timer->tm_mday << "_" << timer->tm_hour << timer->tm_min << timer->tm_sec <<  "] ";
+
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";deposits:" << this->_nbDeposits <<  ";amount:" << this->_amount << ";nb_deposits:" << 1 << std::endl;
 	return ;
 }
@@ -77,6 +100,11 @@ void Account::makeDeposit( int deposit ){
 bool Account::makeWithdrawal ( int withdrawal ){
 	int p_amount = this->_amount;
 	this->_accountIndex = Account::getNbAccounts();
+
+	std::time_t t = std::time(NULL);
+	std::tm *timer = std::localtime(&t);
+	std::cout << '[' << timer->tm_year + 1900 << timer->tm_mon + 1 << timer->tm_mday << "_" << timer->tm_hour << timer->tm_min << timer->tm_sec <<  "] ";
+
 	if (p_amount < 50)
 	{
 		std::cout << "index:" << this->_accountIndex << ";p_amount:" << p_amount << ";withdrawal: refused" << std::endl; 

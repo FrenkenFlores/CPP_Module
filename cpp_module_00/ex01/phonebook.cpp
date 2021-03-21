@@ -30,7 +30,7 @@ void    addFunction(Contact &contact)
 	contact.setVariable("_login", input);
 	std::cout << "postal address: ";
 	std::cin >> input;
-	contact.setVariable("_input", input);
+	contact.setVariable("_postalAddress", input);
 	std::cout << "email address: ";
 	std::cin >> input;
 	contact.setVariable("_emailAddress", input);
@@ -39,7 +39,7 @@ void    addFunction(Contact &contact)
 	contact.setVariable("_phoneNumber", input);
 	std::cout << "birthday date: ";
 	std::cin >> input;
-	contact.setVariable("_birthDay", input);
+	contact.setVariable("_birthdayDate", input);
 	std::cout << "favorite meal: ";
 	std::cin >> input;
 	contact.setVariable("_favoriteMeal", input);
@@ -79,9 +79,9 @@ void    searchFunction(Contact *contactList)
 			std::cout << "NO INDEX FOUND" << std::endl;
 		else
 		{
-			std::cout << "First Name: " << contactList[indexNbr - 1].getVariable("_firstName") << std::endl;
-			std::cout << "Last Name: " << contactList[indexNbr - 1].getVariable("_lastName") << std::endl;
-			std::cout << "Nickname: " << contactList[indexNbr - 1].getVariable("_nickName") << std::endl;
+			std::cout << "First Name: " << contactList[indexNbr - 1].getVariable("_fullFirstName") << std::endl;
+			std::cout << "Last Name: " << contactList[indexNbr - 1].getVariable("_fullLastName") << std::endl;
+			std::cout << "Nickname: " << contactList[indexNbr - 1].getVariable("_fullNickName") << std::endl;
 			std::cout << "Login: " << contactList[indexNbr - 1].getVariable("_login") << std::endl;
 			std::cout << "Postal address: " << contactList[indexNbr - 1].getVariable("_postalAddress") << std::endl;
 			std::cout << "Email address: " << contactList[indexNbr - 1].getVariable("_emailAddress") << std::endl;

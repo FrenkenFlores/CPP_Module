@@ -21,8 +21,11 @@
 class Contact{
 private:
 	std::string	_firstName;
+	std::string _fullFirstName;
 	std::string	_lastName;
+	std::string _fullLastName;
 	std::string	_nickName;
+	std::string _fullNickName;
 	std::string	_login;
 	std::string	_postalAddress;
 	std::string	_emailAddress;

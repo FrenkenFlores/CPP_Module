@@ -35,10 +35,16 @@ Contact::~Contact(){
 std::string Contact::getVariable( std::string str ) const{
 	if (str == "_firstName")
 		return (this->_firstName);
+	else if (str == "_fullFirstName")
+		return (this->_fullFirstName);
 	else if (str == "_lastName")
 		return (this->_lastName);
+	else if (str == "_fullLastName")
+		return (this->_fullLastName);
 	else if (str == "_nickName")
 		return (this->_nickName);
+	else if (str == "_fullNickName")
+		return (this->_fullNickName);
 	else if (str == "_login")
 		return (this->_login);
 	else if (str == "_postalAddress")
@@ -64,6 +70,7 @@ void	Contact::setVariable( std::string str, std::string setValue )
 	if (str == "_firstName")
 	{
 		this->_firstName = setValue;
+		this->_fullFirstName = setValue;
 		if (setValue.length() > 10)
 		{
 			this->_firstName.erase(9,(this->_firstName.length() - 9));
@@ -74,6 +81,7 @@ void	Contact::setVariable( std::string str, std::string setValue )
 	else if (str == "_lastName")
 	{
 		this->_lastName = setValue;
+		this->_fullLastName = setValue;
 		if (setValue.length() > 10)
 		{
 			this->_lastName.erase(9,(this->_lastName.length() - 9));
@@ -84,6 +92,7 @@ void	Contact::setVariable( std::string str, std::string setValue )
 	else if (str == "_nickName")
 	{
 		this->_nickName = setValue;
+		this->_fullNickName = setValue;
 		if (setValue.length() > 10)
 		{
 			this->_nickName.erase(9,(this->_nickName.length() - 9));
