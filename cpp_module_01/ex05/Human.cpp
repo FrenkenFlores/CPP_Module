@@ -24,6 +24,6 @@ std::string Human::identify() const{
 	return _brain.identify();
 }
 
-Brain Human::getBrain() const{
+Brain const &Human::getBrain() const{
 	return this->_brain;
 }

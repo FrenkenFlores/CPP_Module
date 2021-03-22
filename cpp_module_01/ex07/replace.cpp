@@ -42,7 +42,10 @@ void createNewFile(std::string fileName, std::ifstream &inputFile, std::ofstream
 	}
 	outputFile.open(newFileName, std::ios_base::out);
 	if (!fileExists(newFileName))
+	{
 		std::cout << "Can't create new file" << std::endl;
+		exit(5);
+	}
 	return;
 }
 
