@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 20:46:33 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/23 20:46:41 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/23 20:47:10 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/23 20:47:11 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef FIXED_CLASS_HPP
+#define FIXED_CLASS_HPP
+
 #include <iostream>
 
-int main()
+class Fixed
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-}
+private:
+	int _fixedPointValue;
+	const static int _fractionalBits;
+public:
+	Fixed(void);
+	Fixed(const Fixed &src);
+	Fixed &operator=(const Fixed &val);
+	virtual ~Fixed(void);
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
+};
+
+#endif
