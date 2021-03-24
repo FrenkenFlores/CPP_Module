@@ -51,10 +51,15 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const & target);
+	int getVaulthunter_dot_exeDamage(void);
 	std::string generateRandomName(void);
 	std::string generateRandomAttackName(void);
 	int generateRandomAttackDamage(void);
 	int getIndex(void) const;
+	int getId(void) const;
+	int getRandomAttackDamage(void);
+	int getMeleeAttackDamage(void);
+	int getRangedAttackDamage(void);
 	std::string getName(void) const;
 };
 

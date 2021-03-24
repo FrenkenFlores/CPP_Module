@@ -34,7 +34,7 @@ test2:
 	@rm test2
 
 test3:
-	@$(COMPILER) $(FLAGS) $(SRCS) -D NUM=1 -o test3
+	@$(COMPILER) $(FLAGS) $(SRCS) -D NUM=3 -o test3
 	@./test3
 	@rm test3
 

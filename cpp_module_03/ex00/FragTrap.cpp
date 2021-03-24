@@ -27,6 +27,10 @@ int FragTrap::getIndex() const{
 	return this->_index;
 }
 
+int FragTrap::getId() const{
+	return this->_id;
+}
+
 std::string FragTrap::getName() const{
 	return this->_name;
 }
@@ -34,19 +38,22 @@ std::string FragTrap::getName() const{
 std::string FragTrap::generateRandomName()
 {
 	std::srand(time(0));
-	return (FragTrap::_nameArray[((std::rand() + getIndex()) % NUMBER_OF_ROBOTS)]);
+	static int i = 0;
+	return (FragTrap::_nameArray[((std::rand() + getIndex() + i++) % NUMBER_OF_ROBOTS)]);
 }
 
 int FragTrap::generateRandomAttackDamage()
 {
 	std::srand(time(0));
-	return (FragTrap::_randomAttackDamageArray[((std::rand() + _index) % NUMBER_OF_ROBOTS)]);
+	static int i = 0;
+	return (FragTrap::_randomAttackDamageArray[((std::rand() + _index + i++) % NUMBER_OF_ROBOTS)]);
 }
 
 std::string FragTrap::generateRandomAttackName()
 {
+	static int i = 0;
 	std::srand(time(0));
-	return (FragTrap::_randomAttackArray[((std::rand() + _index) % NUMBER_OF_ROBOTS)]);
+	return (FragTrap::_randomAttackArray[((std::rand() + _index + i++) % NUMBER_OF_ROBOTS)]);
 }
 
 
@@ -118,25 +125,38 @@ void FragTrap::rangedAttack(std::string const &target) {
 	_energyPoints -= 10;
 	return;
 }
+
+int FragTrap::getRangedAttackDamage() {
+	return _rangedAttackDamage;
+}
+
 void FragTrap::meleeAttack(std::string const &target) {
 	std::cout << "FR4G-TP <" << _name << "> attacks <" << target << "> in close combat, causing <" << _meleeAttackDamage << "> points of damage!" << std::endl;
 	_energyPoints -= 20;
 	return;
 }
 
+int FragTrap::getMeleeAttackDamage() {
+	return _meleeAttackDamage;
+}
+
 void FragTrap::randomAttack(std::string const &target)
 {
+	_randomAttackDamage = generateRandomAttackDamage();
 	std::cout << "FR4G-TP <" << _name << "> attacks <" << target << "> with " << generateRandomAttackName() << ", causing <" << _randomAttackDamage << "> points of damage!" << std::endl;
 	_energyPoints -= 15;
 	return;
 }
 
+int FragTrap::getRandomAttackDamage() {
+	return _randomAttackDamage;
+}
 
 void FragTrap::takeDamage(unsigned int amount) {
-	std::cout << "FR4G-TP <" << _name << "> toke <" << amount << "> of damage and is left with <" << _hitPoints << "> hit points" << std::endl;
 	_hitPoints -= amount;
 	if (_hitPoints < 0)
 		_hitPoints = 0;
+	std::cout << "FR4G-TP <" << _name << "> toke <" << amount << "> of damage and is left with <" << _hitPoints << "> hit points" << std::endl;
 	return;
 }
 void FragTrap::beRepaired(unsigned int amount) {
@@ -151,3 +171,8 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target) {
 	randomAttack(target);
 	return;
 }
+
+int FragTrap::getVaulthunter_dot_exeDamage(void) {
+	return getRandomAttackDamage();
+}
+
