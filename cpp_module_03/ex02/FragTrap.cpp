@@ -6,56 +6,11 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:16:52 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/24 11:17:01 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/24 22:23:04 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-
-std::string FragTrap::_nameArray[] = {"Refjio", "Mario" , "Santino", "Janet", \
-"Fredro" , "Jozella", "Leila", "Don-Corleone", "Flores" , "Ember"};
-
-std::string FragTrap::_randomAttackArray[] = {"Low kick", "High kick" , "Uppercut", "Overhand", \
-"Jab" , "Crosss", "Hook", "Counterpunch", "Bolo punch" , "Switch-Hitter"};
-
-int	FragTrap::_randomAttackDamageArray[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-int FragTrap::_maxEnergyPoints = 100;
-int FragTrap::_maxHitPoints = 100;
-int FragTrap::_index = 0;
-
-int FragTrap::getIndex() const{
-	return this->_index;
-}
-
-int FragTrap::getId() const{
-	return this->_id;
-}
-
-std::string FragTrap::getName() const{
-	return this->_name;
-}
-
-std::string FragTrap::generateRandomName()
-{
-	std::srand(time(0));
-	static int i = 0;
-	return (FragTrap::_nameArray[((std::rand() + getIndex() + i++) % NUMBER_OF_ROBOTS)]);
-}
-
-int FragTrap::generateRandomAttackDamage()
-{
-	std::srand(time(0));
-	static int i = 0;
-	return (FragTrap::_randomAttackDamageArray[((std::rand() + _index + i++) % NUMBER_OF_ROBOTS)]);
-}
-
-std::string FragTrap::generateRandomAttackName()
-{
-	static int i = 0;
-	std::srand(time(0));
-	return (FragTrap::_randomAttackArray[((std::rand() + _index + i++) % NUMBER_OF_ROBOTS)]);
-}
-
 
 FragTrap::FragTrap() {
 	std::cout << "Random name constructor called" << std::endl;
@@ -114,12 +69,6 @@ FragTrap &FragTrap::operator=(const FragTrap &src) {
 	return *this;
 }
 
-
-std::ostream &operator<<(std::ostream &o, const FragTrap &fragTrap) {
-	o << fragTrap.getName();
-	return (o);
-}
-
 void FragTrap::rangedAttack(std::string const &target) {
 	if (_energyPoints < 10)
 	{
@@ -129,10 +78,6 @@ void FragTrap::rangedAttack(std::string const &target) {
 	std::cout << "FR4G-TP <" << _name << "> attacks <" << target << "> at range, causing <" << _rangedAttackDamage << "> points of damage!" << std::endl;
 	_energyPoints -= 10;
 	return;
-}
-
-int FragTrap::getRangedAttackDamage() {
-	return _rangedAttackDamage;
 }
 
 void FragTrap::meleeAttack(std::string const &target) {
@@ -146,10 +91,6 @@ void FragTrap::meleeAttack(std::string const &target) {
 	return;
 }
 
-int FragTrap::getMeleeAttackDamage() {
-	return _meleeAttackDamage;
-}
-
 void FragTrap::randomAttack(std::string const &target)
 {
 	if (_energyPoints < 25)
@@ -161,10 +102,6 @@ void FragTrap::randomAttack(std::string const &target)
 	std::cout << "FR4G-TP <" << _name << "> attacks <" << target << "> with " << generateRandomAttackName() << ", causing <" << _randomAttackDamage << "> points of damage!" << std::endl;
 	_energyPoints -= 25;
 	return;
-}
-
-int FragTrap::getRandomAttackDamage() {
-	return _randomAttackDamage;
 }
 
 void FragTrap::takeDamage(unsigned int amount) {
@@ -193,4 +130,3 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target) {
 int FragTrap::getVaulthunter_dot_exeDamage(void) {
 	return getRandomAttackDamage();
 }
-

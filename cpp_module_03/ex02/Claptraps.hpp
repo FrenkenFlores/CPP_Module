@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Claptraps.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 11:16:54 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/24 21:28:57 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/24 21:58:11 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/24 22:18:10 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAG_TRAP_HPP
-#define FRAG_TRAP_HPP
+#ifndef CLAP_TRAPS_HPP
+#define CLAP_TRAPS_HPP
+
 #define NUMBER_OF_ROBOTS 10
 
 #include <iostream>
@@ -19,9 +20,9 @@
 #include <cstdlib>
 #include <ctime>
 
-class FragTrap
+class Claptraps
 {
-private:
+protected:
 	int _id;
 	int _hitPoints;
 	int _energyPoints;
@@ -40,18 +41,11 @@ private:
 	static int _index;
 
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &src);
-	~FragTrap(void);
-	FragTrap &operator=(const FragTrap &src);
-	void rangedAttack(std::string const & target);
-	void randomAttack(std::string const &target);
-	void meleeAttack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	void vaulthunter_dot_exe(std::string const & target);
-	int getVaulthunter_dot_exeDamage(void);
+	Claptraps(void);
+	Claptraps(std::string name);
+	Claptraps(const Claptraps &src);
+	~Claptraps(void);
+	Claptraps &operator=(const Claptraps &src);
 	std::string generateRandomName(void);
 	std::string generateRandomAttackName(void);
 	int generateRandomAttackDamage(void);
@@ -63,6 +57,9 @@ public:
 	std::string getName(void) const;
 };
 
-std::ostream &operator<<(std::ostream &o, const FragTrap &fragTrap);
+std::ostream &operator<<(std::ostream &o, const Claptraps &scavTrap);
+
+
+
 
 #endif

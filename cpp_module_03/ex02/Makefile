@@ -6,15 +6,15 @@
 #    By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 12:04:35 by fflores           #+#    #+#              #
-#    Updated: 2021/03/24 21:45:31 by fflores          ###   ########.fr        #
+#    Updated: 2021/03/24 22:15:05 by fflores          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean re test1 test2 test3 test4
 
 NAME = program
-SRCS = FragTrap.cpp main.cpp
-HEADER = FragTrap.hpp
+SRCS = FragTrap.cpp main.cpp ScavTrap.cpp Claptraps.cpp
+HEADER = FragTrap.hpp ScavTrap.hpp Claptraps.hpp
 FLAGS = -Wall -Werror -Wextra -std=c++98
 COMPILER = clang++
 
