@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 20:47:08 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/23 20:47:09 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/23 20:47:21 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/23 20:47:21 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,27 @@ const int Fixed::_fractionalBits = 8;
 Fixed::Fixed() : _fixedPointValue(0){
 	std::cout << "Default constructor called" << std::endl;
 	return;
+}
+
+Fixed::Fixed(const int val) {
+	std::cout << "Int constructor called" << std::endl;
+	_fixedPointValue = val * (1 << _fractionalBits);
+	return;
+}
+
+Fixed::Fixed(const float val) {
+	std::cout << "Float constructor called" << std::endl;
+	_fixedPointValue = roundf(val * (1 << _fractionalBits));
+	return;
+}
+
+int Fixed::toInt() const {
+	return (_fixedPointValue / (1 << _fractionalBits));
+}
+
+
+float Fixed::toFloat() const {
+	return ((float)(_fixedPointValue) / (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &src) {
@@ -30,6 +51,11 @@ Fixed &Fixed::operator=(const Fixed &val) {
 	if (this != &val)
 		this->_fixedPointValue = val._fixedPointValue;
 	return (*this);
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &src) {
+	os << src.toFloat();
+	return (os);
 }
 
 

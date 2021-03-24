@@ -32,3 +32,12 @@ https://github.com/eteran/cpp-utilities/blob/master/fixed/include/cpp-utilities/
 https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming
 
 http://www.gotw.ca/publications/mill18.htm
+
+https://blogs.mathworks.com/simulink/2008/12/14/representing-numbers-integers-and-fixed-point/#:~:text=Fixed%2DPoint%20Number%3A%20Slope%20and,calculate%20the%20real%2Dworld%20value.
+
+
+https://habr.com/ru/post/451922/
+
+
+
+https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
