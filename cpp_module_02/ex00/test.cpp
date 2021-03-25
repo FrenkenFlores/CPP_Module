@@ -14,8 +14,7 @@
 
 #include "Fixed.class.hpp"
 
-#define NUM 0
-#if NUM == 0 && N == 0// Change NUM (NUM = 1) to use the second main function
+#ifndef N // Change NUM (NUM = 1) to use the second main function
 
 int main( void ) {
 	Fixed a;

@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <cstdlib>
-#include <ctime>
+
 
 std::string Zombie::_nameArray[] = {"Refjio", "Mario" , "Santino", "Janet", \
 "Fredro" , "Jozella", "Leila", "Don-Corleone", "Flores" , "Ember"};

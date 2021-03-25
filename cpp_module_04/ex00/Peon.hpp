@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 22:32:51 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/15 23:47:07 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/25 17:23:49 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/25 17:23:50 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
-#include "Zombie.hpp"
+#ifndef PEON_HPP
+#define PEON_HPP
 
-ZombieEvent::ZombieEvent()
-{
-	return;
-}
+#include "Victim.hpp"
 
-ZombieEvent::~ZombieEvent()
+class Peon : public Victim
 {
-	return;
-}
+public:
+	Peon(void);
+	Peon(std::string name);
+	Peon(const Peon &src);
+	Peon &operator=(const Peon &rhs);
+	~Peon();
+	void getPolymorphed(void) const;
+};
 
-void ZombieEvent::setZombieType( std::string type )
-{
-	this->_type = type;
-	return ;
-}
 
-Zombie *ZombieEvent::newZombie( std::string name )
-{
-	Zombie *z = new Zombie(name, this->_type);
-	return z;
-}
 
-Zombie *ZombieEvent::randomChump()
-{
-	Zombie *z = new Zombie(this->_type);
-	return z;
-}
+#endif

@@ -41,3 +41,10 @@ https://habr.com/ru/post/451922/
 
 
 https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
+
+
+https://medium.com/@kateolenya/inheritance-in-c-c0cfe809994d
+
+
+
+https://www.geeksforgeeks.org/multiple-inheritance-in-c/
