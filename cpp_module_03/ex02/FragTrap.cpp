@@ -6,14 +6,14 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:16:52 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/24 22:23:04 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/24 22:26:50 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-	std::cout << "Random name constructor called" << std::endl;
+	std::cout << "FragTrap random name constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	_hitPoints = _maxHitPoints;
@@ -27,7 +27,7 @@ FragTrap::FragTrap() {
 }
 
 FragTrap::FragTrap(std::string name) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "FragTrap default constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	_hitPoints = _maxHitPoints;
@@ -41,7 +41,7 @@ FragTrap::FragTrap(std::string name) {
 }
 
 FragTrap::FragTrap(const FragTrap &src) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "FragTrap copy constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	*this = src;
@@ -49,13 +49,13 @@ FragTrap::FragTrap(const FragTrap &src) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 	_index--;
 	return;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &src) {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "FragTrap assignation operator called" << std::endl;
 	if (this != &src)
 	{
 		_hitPoints = src._hitPoints;

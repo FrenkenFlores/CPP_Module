@@ -6,14 +6,14 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:16:52 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/24 22:22:50 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/24 22:27:20 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
-	std::cout << "Random name constructor called" << std::endl;
+	std::cout << "ScavTrap random name constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	_hitPoints = _maxHitPoints;
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap() {
 }
 
 ScavTrap::ScavTrap(std::string name) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ScavTrap default constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	_hitPoints = _maxHitPoints;
@@ -41,7 +41,7 @@ ScavTrap::ScavTrap(std::string name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	*this = src;
@@ -49,13 +49,13 @@ ScavTrap::ScavTrap(const ScavTrap &src) {
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ScavTrap destructor called" << std::endl;
 	_index--;
 	return;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &src) {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "ScavTrap assignation operator called" << std::endl;
 	if (this != &src)
 	{
 		_hitPoints = src._hitPoints;

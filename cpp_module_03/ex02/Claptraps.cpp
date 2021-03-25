@@ -6,7 +6,7 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 21:58:14 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/24 22:16:54 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/24 22:26:08 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ std::string Claptraps::generateRandomAttackName()
 
 
 Claptraps::Claptraps() {
-	std::cout << "Random name constructor called" << std::endl;
+	std::cout << "Claptraps random name constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	_hitPoints = _maxHitPoints;
@@ -72,7 +72,7 @@ Claptraps::Claptraps() {
 }
 
 Claptraps::Claptraps(std::string name) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Claptraps default constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	_hitPoints = _maxHitPoints;
@@ -86,7 +86,7 @@ Claptraps::Claptraps(std::string name) {
 }
 
 Claptraps::Claptraps(const Claptraps &src) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Claptraps copy constructor called" << std::endl;
 	_id = _index;
 	_index++;
 	*this = src;
@@ -94,13 +94,13 @@ Claptraps::Claptraps(const Claptraps &src) {
 }
 
 Claptraps::~Claptraps() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Claptraps destructor called" << std::endl;
 	_index--;
 	return;
 }
 
 Claptraps &Claptraps::operator=(const Claptraps &src) {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Claptraps assignation operator called" << std::endl;
 	if (this != &src)
 	{
 		_hitPoints = src._hitPoints;
