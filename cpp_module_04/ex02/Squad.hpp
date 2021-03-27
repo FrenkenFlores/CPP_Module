@@ -1,43 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 14:33:10 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/26 14:38:17 by fflores          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef SQUAD_HPP
 #define SQUAD_HPP
-
 #include "ISquad.hpp"
 #include "ISpaceMarine.hpp"
-#include "TacticalMarine.hpp"
-
-typedef struct	s_squad
-{
-	ISpaceMarine *marine;
-	struct s_squad *next;
-}				t_squad;
-
+#include <iostream>
 
 class Squad : public ISquad
 {
-private:
-	int _count;
-	t_squad *squad;
+protected:
+	int	_count;
+	ISpaceMarine **_squad;
 
+private:
+	bool _unitCheck(ISpaceMarine *unit);
 public:
 	Squad(void);
 	Squad(const Squad &src);
 	Squad &operator=(const Squad &rhs);
-	~Squad();
+	~Squad(void);
 	int getCount() const;
-	ISpaceMarine * getUnit(int) const;
-	int push(ISpaceMarine *);
+	ISpaceMarine * getUnit(int index) const;
+	int push(ISpaceMarine *unit);
 };
+
+
+
 
 #endif

@@ -1,14 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 14:33:00 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/26 14:35:01 by fflores          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef ISPACEMARINE_HPP
+#define ISPACEMARINE_HPP
 
 class ISpaceMarine
 {
@@ -19,3 +10,5 @@ public:
 	virtual void rangedAttack() const = 0;
 	virtual void meleeAttack() const = 0;
 };
+
+#endif

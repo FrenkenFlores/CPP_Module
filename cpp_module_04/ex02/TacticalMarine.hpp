@@ -1,13 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 14:33:15 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/26 14:35:07 by fflores          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef TACTICAL_MARINE_HPP
+#define TACTICAL_MARINE_HPP
+#include "ISpaceMarine.hpp"
+#include <iostream>
 
-#define
+class TacticalMarine : public ISpaceMarine
+{
+public:
+	TacticalMarine(void);
+	TacticalMarine(const TacticalMarine &src);
+	TacticalMarine & operator=(const TacticalMarine &rhs);
+	~TacticalMarine(void);
+	ISpaceMarine * clone() const;
+	void battleCry() const;
+	void rangedAttack() const;
+	void meleeAttack() const;
+};
+
+
+#endif

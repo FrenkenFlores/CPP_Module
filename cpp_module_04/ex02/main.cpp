@@ -1,30 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 14:33:05 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/26 14:35:02 by fflores          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-
-#include "Squad.hpp"
 #include "ISquad.hpp"
-#include "AssaultTerminator.hpp"
 #include "ISpaceMarine.hpp"
+#include "Squad.hpp"
 #include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
+#include "Assassin.hpp"
+#include <iostream>
 
 
 int main()
 {
+	ISpaceMarine* robot = new AssaultTerminator;
+	ISpaceMarine* jim = new TacticalMarine;
 	ISpaceMarine* bob = new TacticalMarine;
-	ISpaceMarine* jim = new AssaultTerminator;
+	ISpaceMarine* ezio = new Assassin;
+	Assassin altair;
 	ISquad* vlc = new Squad;
+	vlc->push(&altair);
+	vlc->push(ezio);
+	vlc->push(robot);
 	vlc->push(bob);
 	vlc->push(jim);
+	std::cout << vlc->getCount() << " Units been deployed" << std::endl;
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
 		ISpaceMarine* cur = vlc->getUnit(i);
