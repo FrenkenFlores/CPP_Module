@@ -26,3 +26,13 @@ void SuperMutant::takeDamage(int damage) {
 	this->_hitPoints -= damage - 3;
 	return;
 }
+
+SuperMutant::SuperMutant(const SuperMutant &src) {
+	*this = src;
+}
+
+SuperMutant & SuperMutant::operator=(const SuperMutant &rhs) {
+	_type = rhs._type;
+	_hitPoints = rhs._hitPoints;
+	return (*this);
+}

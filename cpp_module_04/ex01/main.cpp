@@ -6,7 +6,7 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:25:24 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/25 22:25:24 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/28 12:22:53 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int main()
 	me->attack(c);
 	me->attack(b);
 	me->attack(c);
+	me->attack(c);
 	std::cout << *me;
 	me->recoverAP();
 	me->recoverAP();
@@ -46,6 +47,16 @@ int main()
 	me->recoverAP();
 	me->recoverAP();
 	me->recoverAP();
+	std::cout << *me;
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
+	me->attack(c);
 	me->unequip();
 	std::cout << *me;
 	delete me;

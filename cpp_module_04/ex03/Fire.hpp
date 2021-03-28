@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   Fire.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 21:01:52 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/28 12:12:35 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/28 10:21:28 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/28 10:21:29 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-#define SUPERMUTANT_HPP
+#ifndef FIRE_HPP
+#define FIRE_HPP
 
-#include "Enemy.hpp"
+#include "AMateria.hpp"
 
-class SuperMutant : public Enemy
+class Fire : public AMateria
 {
 public:
-	SuperMutant(void);
-	~SuperMutant(void);
-	SuperMutant(const SuperMutant &src);
-	SuperMutant & operator=(const SuperMutant &rhs);
-	void takeDamage(int damage);
+	Fire();
+	Fire(const Fire &src);
+	Fire(const std::string type);
+	Fire & operator=(const Fire &rhs);
+	~Fire();
+	AMateria * clone() const;
+	void use(ICharacter &target);
 };
 
 #endif

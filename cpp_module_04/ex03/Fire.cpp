@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
+/*   Fire.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 21:15:00 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/28 12:14:05 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/28 10:21:32 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/28 10:22:41 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
+#include "Fire.hpp"
 
-RadScorpion::RadScorpion() : Enemy(80, "RadScorpion"){
-	std::cout << "* click click click *" << std::endl;
+Fire::Fire() : AMateria("fire") {
 	return;
 }
 
-RadScorpion::~RadScorpion() {
-	std::cout << "* SPROTCH *" << std::endl;
-	return;
-}
-
-RadScorpion::RadScorpion(const RadScorpion &src) {
+Fire::Fire(const Fire &src) {
 	*this = src;
+	return;
 }
 
-RadScorpion & RadScorpion::operator=(const RadScorpion &rhs) {
+Fire & Fire::operator=(const Fire &rhs) {
 	_type = rhs._type;
-	_hitPoints = rhs._hitPoints;
+	_xp = rhs._xp;
 	return (*this);
+}
+
+Fire::~Fire() {
+	return;
+}
+
+AMateria * Fire::clone() const {
+	AMateria *ptr = new Fire;
+	return (ptr);
+}
+
+void Fire::use(ICharacter &target) {
+	AMateria::use(target);
+	std::cout << "* throws a Fire ball at " << target.getName() << " *" << std::endl;
+	return;
 }

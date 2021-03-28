@@ -13,6 +13,10 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() {
+	_materiaNumber = 0;
+	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
+		_materia[i] = NULL;
+	}
 	return;
 }
 
@@ -26,22 +30,25 @@ MateriaSource::~MateriaSource() {
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource &rhs) {
+	_materiaNumber = rhs._materiaNumber;
+	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
+		_materia[i] = rhs._materia[i];
+	}
 	return (*this);
 }
 
 AMateria * MateriaSource::createMateria(const std::string &type) {
-	AMateria *ptr;
-	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
+	AMateria *ptr = 0;
+	for (int i = 0; i < NUMBER_OF_MATERIA && i < _materiaNumber; ++i) {
 		if (_materia[i]->getType() == type)
 			ptr = _materia[i];
 	}
-	std::cout << "created materia" << std::endl;
 	return (ptr);
 }
 
 void MateriaSource::learnMateria(AMateria *materia) {
-	static int i = 0;
-	_materia[i++ % NUMBER_OF_MATERIA] = materia->clone();
-	std::cout << "learned materia" << std::endl;
+	if (_materiaNumber > 4)
+		_materiaNumber = _materiaNumber % NUMBER_OF_MATERIA;
+	_materia[_materiaNumber++] = materia->clone();
 	return;
 }

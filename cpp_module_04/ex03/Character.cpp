@@ -14,7 +14,7 @@
 
 Character::Character() {
 	_materiaNumber = 0;
-	_name = "Materia";
+	_name = "";
 	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
 		_materia[i] = NULL;
 	}
@@ -31,15 +31,29 @@ Character::Character(const std::string &name) {
 }
 
 Character::Character(const Character &src) {
-	*this = src;
+	_name = src._name;
+	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
+		if (src._materia[i])
+			_materia[i] = src._materia[i]->clone();
+		else
+			_materia[i] = NULL;
+	}
 	return;
 }
 
 Character & Character::operator=(const Character &rhs) {
+
+	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
+		if (_materia[i])
+			delete _materia[i];
+	}
 	_materiaNumber = rhs._materiaNumber;
 	_name = rhs._name;
 	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
-		_materia[i] = rhs._materia[i];
+		if (rhs._materia[i])
+			_materia[i] = rhs._materia[i]->clone();
+		else
+			_materia[i] = NULL;
 	}
 	return (*this);
 }
@@ -64,7 +78,7 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter &target) {
-	if (idx <= _materiaNumber)
+	if (idx <= _materiaNumber && idx < NUMBER_OF_MATERIA && _materia[idx])
 		_materia[idx]->use(target);
 	return;
 }

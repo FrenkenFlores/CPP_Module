@@ -6,7 +6,7 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 20:29:19 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/25 20:29:19 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/28 12:17:34 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ protected:
 	std::string _name;
 	int	_actionPoints;
 	AWeapon *_weapon;
-public:
 	Character(void);
+public:
 	Character(const Character *src);
 	Character &operator=(const Character &rhs);
 	Character(std::string const & name);

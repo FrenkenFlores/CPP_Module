@@ -6,13 +6,13 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 20:29:15 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/25 20:29:15 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/28 12:20:20 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() {
+Character::Character() : _name(""), _actionPoints(40), _weapon(NULL){
 	return;
 }
 
@@ -43,14 +43,19 @@ void Character::recoverAP() {
 }
 
 void Character::attack(Enemy *enemy) {
-	if (_weapon == NULL)
-		return;
-	std::cout << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
-	_weapon->attack();
-	_actionPoints -= _weapon->getAPCost();
-	if (_actionPoints < 0)
-		_actionPoints = 0;
-	enemy->takeDamage(_weapon->getDamage());
+	if (_actionPoints >= _weapon->getAPCost())
+	{
+		if (_weapon == NULL)
+			return;
+		std::cout << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
+		_weapon->attack();
+		_actionPoints -= _weapon->getAPCost();
+		if (_actionPoints < 0)
+			_actionPoints = 0;
+		enemy->takeDamage(_weapon->getDamage());
+	}
+	else
+		std::cout << _name << " don't have enough action points to use " << _weapon->getName() << std::endl;
 	return;
 }
 

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 21:01:52 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/28 12:12:35 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/27 21:16:30 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/27 21:16:30 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-#define SUPERMUTANT_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "Enemy.hpp"
+#include "IMateriaSource.hpp"
 
-class SuperMutant : public Enemy
+class MateriaSource: public IMateriaSource
 {
 public:
-	SuperMutant(void);
-	~SuperMutant(void);
-	SuperMutant(const SuperMutant &src);
-	SuperMutant & operator=(const SuperMutant &rhs);
-	void takeDamage(int damage);
+	MateriaSource();
+	~MateriaSource();
+	MateriaSource(const MateriaSource &src);
+	MateriaSource & operator=(const MateriaSource &rhs);
+	void learnMateria(AMateria *materia);
+	AMateria * createMateria(const std::string &type);
+private:
+	AMateria *_materia[NUMBER_OF_MATERIA];
+	unsigned int _materiaNumber;
 };
 
 #endif

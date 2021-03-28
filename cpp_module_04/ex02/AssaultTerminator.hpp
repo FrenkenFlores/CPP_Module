@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AssaultTerminator.hpp                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/27 21:15:38 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/27 21:15:38 by fflores          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ASSAULT_TERMINATOR_HPP
 #define ASSAULT_TERMINATOR_HPP
 #include "ISpaceMarine.hpp"

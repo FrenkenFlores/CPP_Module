@@ -19,6 +19,8 @@ class PowerFist : public AWeapon
 {
 public:
 	PowerFist(void);
+	PowerFist(const PowerFist &src);
+	PowerFist & operator=(const PowerFist &rhs);
 	~PowerFist(void);
 	void attack(void) const;
 };

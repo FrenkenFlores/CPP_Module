@@ -48,3 +48,6 @@ https://medium.com/@kateolenya/inheritance-in-c-c0cfe809994d
 
 
 https://www.geeksforgeeks.org/multiple-inheritance-in-c/
+
+
+https://en.cppreference.com/w/cpp/language/class

@@ -17,6 +17,17 @@ PowerFist::PowerFist() : AWeapon("Power Fist",8, 50) {
 	return;
 }
 
+PowerFist::PowerFist(const PowerFist &src) {
+	*this = src;
+}
+
+PowerFist & PowerFist::operator=(const PowerFist &rhs) {
+	_name = rhs._name;
+	_damagePoints = rhs._damagePoints;
+	_actionPoints = rhs._actionPoints;
+	return (*this);
+}
+
 PowerFist::~PowerFist() {
 	return;
 }

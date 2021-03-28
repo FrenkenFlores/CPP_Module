@@ -6,7 +6,7 @@
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 17:23:42 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/25 17:31:58 by fflores          ###   ########.fr       */
+/*   Updated: 2021/03/28 11:39:42 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Sorcerer
 private:
 	std::string _name;
 	std::string	_title;
+	Sorcerer(void);
 
 public:
-	Sorcerer(void);
 	Sorcerer(std::string name, std::string title);
 	Sorcerer &operator=(const Sorcerer &rhs);
 	Sorcerer(const Sorcerer &src);

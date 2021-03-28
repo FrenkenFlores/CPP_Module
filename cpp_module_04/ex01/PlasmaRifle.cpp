@@ -16,6 +16,17 @@ PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle",5, 21) {
 	return;
 }
 
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &src) {
+	*this = src;
+}
+
+PlasmaRifle & PlasmaRifle::operator=(const PlasmaRifle &rhs) {
+	_name = rhs._name;
+	_damagePoints = rhs._damagePoints;
+	_actionPoints = rhs._actionPoints;
+	return (*this);
+}
+
 PlasmaRifle::~PlasmaRifle() {
 	return;
 }

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Slave.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/27 21:16:30 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/27 21:16:30 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/28 11:30:05 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/28 11:30:58 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
+#ifndef SLAVE_HPP
+#define SLAVE_HPP
 
-#include "IMateriaSource.hpp"
+#include "Victim.hpp"
 
-class MateriaSource: public IMateriaSource
+class Slave : public Victim
 {
 public:
-	MateriaSource();
-	~MateriaSource();
-	MateriaSource(const MateriaSource &src);
-	MateriaSource & operator=(const MateriaSource &rhs);
-	void learnMateria(AMateria *materia);
-	AMateria * createMateria(const std::string &type);
-private:
-	AMateria *_materia[NUMBER_OF_MATERIA];
+	Slave(void);
+	Slave(std::string name);
+	Slave(const Slave &src);
+	Slave &operator=(const Slave &rhs);
+	~Slave();
+	void getPolymorphed(void) const;
 };
+
+
 
 #endif

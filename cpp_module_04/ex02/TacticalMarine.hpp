@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/27 21:16:01 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/27 21:16:01 by fflores          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TACTICAL_MARINE_HPP
 #define TACTICAL_MARINE_HPP
 #include "ISpaceMarine.hpp"
