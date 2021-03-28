@@ -20,7 +20,7 @@ Squad::Squad(const Squad &src) {
 	_count = src._count;
 	_squad = new ISpaceMarine *[src._count];
 	for (int i = 0; i < _count; ++i) {
-		_squad[i] = src._squad[i];
+		_squad[i] = src._squad[i]->clone();
 	}
 	return;
 }

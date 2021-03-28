@@ -19,7 +19,7 @@
 #include <iostream>
 class Character
 {
-protected:
+private:
 	std::string _name;
 	int	_actionPoints;
 	AWeapon *_weapon;

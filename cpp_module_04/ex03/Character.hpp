@@ -20,7 +20,7 @@
 class Character : public ICharacter
 {
 private:
-	unsigned int _materiaNumber;
+	int _materiaNumber;
 	std::string	_name;
 	AMateria *_materia[NUMBER_OF_MATERIA];
 public:

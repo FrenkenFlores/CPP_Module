@@ -54,17 +54,38 @@ int main()
 	c4 = c3;
 	//Learn materia, create materia, equip, use and unequip
 	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Fire());
+	AMateria *ice = new Ice();
+	AMateria *fire = new Fire();
+	AMateria *cure = new Cure();
+
+	src->learnMateria(ice);
+	src->learnMateria(cure);
+	src->learnMateria(fire);
 	ICharacter* me = new Character("Flores");
 	ICharacter* frenken = new Character("Frenken");
 	//create materia, equip, use and unequip
+
+//	AMateria **tmp;
+//	tmp = src->createMateria("ice");
+//	me->equip(src->createMateria("ice"));
+//	tmp = src->createMateria("cure");
+//	me->equip(src->createMateria("cure"));
+//	tmp = src->createMateria("fire");
+//	me->equip(src->createMateria("fire"));
+//	tmp = src->createMateria("ice");
+//	me->equip(src->createMateria("ice"));
+//	tmp = src->createMateria("fire");
+//	me->equip(src->createMateria("fire"));
+//	tmp = src->createMateria("ice");
+//	me->equip(src->createMateria("ice"));
+
 	me->equip(src->createMateria("ice"));
 	me->equip(src->createMateria("fire"));
 	me->equip(src->createMateria("cure"));
 	me->equip(src->createMateria("fire"));
 	me->equip(src->createMateria("ice"));
+	me->equip(src->createMateria("cure"));
+	me->equip(src->createMateria("fire"));
 	me->use(0, *frenken);
 	me->use(1, *frenken);
 	me->use(2, *frenken);
@@ -76,8 +97,15 @@ int main()
 	me->use(0, *frenken);
 	me->unequip(1);
 	me->use(1, *frenken);
+	me->unequip(2);
+	me->use(2, *frenken);
+	me->unequip(3);
+	me->use(3, *frenken);
 	delete frenken;
 	delete me;
 	delete src;
+	delete ice;
+	delete fire;
+	delete cure;
 	return 0;
 }

@@ -26,6 +26,10 @@ MateriaSource::MateriaSource(const MateriaSource &src) {
 }
 
 MateriaSource::~MateriaSource() {
+	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
+		if (_materia[i])
+			delete _materia[i];
+	}
 	return;
 }
 

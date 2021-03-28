@@ -32,6 +32,7 @@ Character::Character(const std::string &name) {
 
 Character::Character(const Character &src) {
 	_name = src._name;
+	_materiaNumber = src._materiaNumber;
 	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
 		if (src._materia[i])
 			_materia[i] = src._materia[i]->clone();
@@ -59,12 +60,16 @@ Character & Character::operator=(const Character &rhs) {
 }
 
 Character::~Character() {
+	for (int i = 0; i < NUMBER_OF_MATERIA; ++i) {
+		if (_materia[i])
+			delete _materia[i];
+	}
 	return;
 }
 
 void Character::equip(AMateria *m) {
 	if (_materiaNumber < NUMBER_OF_MATERIA)
-		_materia[_materiaNumber++] = m;
+		_materia[_materiaNumber++] = m->clone();
 	return;
 }
 
@@ -72,6 +77,7 @@ void Character::unequip(int idx) {
 	if (idx <= _materiaNumber)
 	{
 		_materiaNumber--;
+		delete _materia[idx];
 		_materia[idx] = NULL;
 	}
 	return;

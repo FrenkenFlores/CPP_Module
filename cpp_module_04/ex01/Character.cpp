@@ -20,6 +20,18 @@ Character::~Character() {
 	return;
 }
 
+Character::Character(const Character *src) {
+	*this = src;
+	return;
+}
+
+Character & Character::operator=(const Character &rhs) {
+	_name = rhs.getName();
+	_actionPoints = rhs.getActionPoints();
+	_weapon = rhs.getWeapon();
+	return (*this);
+}
+
 Character::Character(const std::string &name) : _name(name), _actionPoints(40), _weapon(NULL){
 	return;
 }

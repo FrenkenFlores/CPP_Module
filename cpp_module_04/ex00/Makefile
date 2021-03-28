@@ -13,8 +13,8 @@
 .PHONY: all clean re
 
 NAME = program
-SRCS = Peon.cpp Sorcerer.cpp Victim.cpp main.cpp
-HEADER = Peon.hpp Sorcerer.hpp Victim.hpp
+SRCS = Peon.cpp Sorcerer.cpp Victim.cpp main.cpp Slave.cpp
+HEADER = Peon.hpp Sorcerer.hpp Victim.hpp Slave.hpp
 FLAGS = -Wall -Werror -Wextra -std=c++98
 COMPILER = clang++
 

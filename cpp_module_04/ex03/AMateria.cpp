@@ -20,7 +20,7 @@ AMateria::~AMateria() {
 	return;
 }
 
-AMateria::AMateria(const std::string &type) : _type(type), _xp(0) {
+AMateria::AMateria(const std::string &type) : _xp(0), _type(type) {
 	return;
 }
 

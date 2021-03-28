@@ -26,7 +26,7 @@ public:
 	AMateria * createMateria(const std::string &type);
 private:
 	AMateria *_materia[NUMBER_OF_MATERIA];
-	unsigned int _materiaNumber;
+	int _materiaNumber;
 };
 
 #endif

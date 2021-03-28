@@ -40,6 +40,10 @@ int main()
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
+	delete robot;
+	delete jim;
+	delete bob;
+	delete ezio;
 	delete vlc;
 	return 0;
 }
