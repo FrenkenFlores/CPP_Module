@@ -6,6 +6,14 @@ void printH(std::string header)
 }
 
 int main() {
+	printH("Assgination, copy, etc");
+	Bureaucrat Zed("Zed", 48);
+	Bureaucrat Vi("Vi", 45);
+	Bureaucrat Gamma(Vi);
+	Bureaucrat Alpha("Alpha", 33);
+	Alpha = Zed;
+	std::cout << Zed << Vi << Gamma << Alpha;
+
 	printH("With no exception");
 	try {
 		Bureaucrat Tom("Tom", 75);

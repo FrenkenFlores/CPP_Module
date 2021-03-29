@@ -51,3 +51,20 @@ https://www.geeksforgeeks.org/multiple-inheritance-in-c/
 
 
 https://en.cppreference.com/w/cpp/language/class
+
+
+https://habr.com/ru/post/279111/
+
+https://habr.com/ru/post/279151/
+
+https://habr.com/ru/post/279149/
+
+
+https://docs.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-160
+
+
+https://medium.com/@manojddesilva/some-useful-facts-to-know-when-using-c-exceptions-2b614492be0
+
+
+
+https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm#:~:text=A%20C%2B%2B%20exception%20is%20a,try%2C%20catch%2C%20and%20throw

@@ -68,3 +68,14 @@ void Bureaucrat::decrementGrade() {
 	std::cout << "Grade been decremented and it equals " << getGrade() << std::endl;
 	return;
 }
+
+void Bureaucrat::signForm(Form &form) {
+	if (_grade <= form.getSignGrade())
+	{
+		form.beSigned();
+		std::cout << "<" << _name << "> signs <" << form.getName() << ">" << std::endl;
+	}
+	else
+		std::cout << "<" << _name << "> can't sign <" << form.getName() << "> because the form needs a higher grade" << std::endl;
+	return;
+}
