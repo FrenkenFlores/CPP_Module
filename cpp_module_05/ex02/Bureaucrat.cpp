@@ -53,6 +53,11 @@ int Bureaucrat::getGrade() const{
 	return (_grade);
 }
 
+void Bureaucrat::setGrade(int grade) {
+	_grade = grade;
+	return ;
+}
+
 void Bureaucrat::incrementGrade() {
 	_grade--;
 	if (_grade < 1)
@@ -82,8 +87,8 @@ void Bureaucrat::signForm(Form &form) {
 
 void		Bureaucrat::executeForm(Form const &form) {
 	try {
-		form.execute(*this);
 		std::cout << "<" << _name << "> executes <" << form.getTarget() << ">" << std::endl;
+		form.execute(*this);
 	}
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;

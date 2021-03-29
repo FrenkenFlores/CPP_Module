@@ -1,6 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : Form(target, 145, 137){
+PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : Form(target, 25, 5){
 	return;
 }
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &form) : Form(form) {
@@ -16,4 +16,6 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 }
 
 void    PresidentialPardonForm::formFunction() const {
+	std::cout << "<" << getTarget() << "> has been pardoned by Zafod Beeblebrox." << std::endl;
+	return;
 }

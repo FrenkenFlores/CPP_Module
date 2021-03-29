@@ -10,5 +10,5 @@ public:
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &);
 	~PresidentialPardonForm();
 	void formFunction() const;
-}
+};
 #endif

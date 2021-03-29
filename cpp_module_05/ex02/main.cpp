@@ -14,9 +14,11 @@ int main() {
 	Bureaucrat Adam("Adam", 145);
 	Bureaucrat Jacob("Jacob", 137);
 	ShrubberyCreationForm tree("tree");
+	PresidentialPardonForm president("presindent");
+	RobotomyRequestForm robot("robot");
 
-	std::cout << Adam << Jacob;
 	printH("ShrubberyCreationForm test");
+	std::cout << Adam << Jacob;
 	std::cout << tree;
 	try {
 		Adam.signForm(tree);
@@ -33,54 +35,43 @@ int main() {
 		std::cerr << e.what() << std::endl;
 	}
 	printH("PresidentialPardonForm test");
-//	printH("Signing forms without exceptions");
-//	try {
-//		Adam.signForm(form1);
-//		std::cout << form1;
-//		Adam.signForm(form0);
-//		std::cout << form0;
-//		Adam.incrementGrade();
-//		Adam.signForm(form0);
-//		std::cout << form0;
-//		Jacob.signForm(form2);
-//		std::cout << form2;
-//		Jacob.decrementGrade();
-//		form2.beUnsigned();
-//		Jacob.signForm(form2);
-//		std::cout << form2;
-//	}
-//	catch (std::exception &e) {
-//		std::cerr << e.what() << std::endl;
-//	}
-//	printH("Creating form with an exception");
-//	try {
-//		Form form3("99G", 200, 100);
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cerr << e.what() << std::endl;
-//	}
-//	try {
-//		Form form3("99G", 100, 200);
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cerr << e.what() << std::endl;
-//	}
-//	try {
-//		Form form3("99G", 0, 100);
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cerr << e.what() << std::endl;
-//	}
-//	try {
-//		Form form3("99G", 100, 0);
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cerr << e.what() << std::endl;
-//	}
-//	printH("Destroying objects");
+	Adam.setGrade(25);
+	Jacob.setGrade(5);
+	std::cout << Adam << Jacob;
+	std::cout << president;
+	try {
+		Adam.signForm(president);
+		Adam.executeForm(president);
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	try {
+		Adam.signForm(president);
+		Jacob.executeForm(president);
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	printH("RobotomyRequestForm test");
+	Adam.setGrade(72);
+	Jacob.setGrade(45);
+	std::cout << Adam << Jacob;
+	std::cout << president;
+	std::cout << robot;
+	try {
+		Adam.signForm(robot);
+		Adam.executeForm(robot);
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	try {
+		Adam.signForm(robot);
+		Jacob.executeForm(robot);
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 	return (0);
 }
