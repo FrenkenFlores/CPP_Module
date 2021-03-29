@@ -47,5 +47,9 @@ std::string Enemy::getType() const {
 
 void Enemy::takeDamage(int damage) {
 	_hitPoints -= damage;
+	if (_hitPoints < 0)
+		_hitPoints = 0;
+	std::cout << "Enemy <" << getType() << "> is left with <" << getHP() << "> HP" << std::endl;
+
 	return;
 }

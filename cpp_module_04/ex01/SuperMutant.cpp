@@ -24,6 +24,9 @@ SuperMutant::~SuperMutant() {
 
 void SuperMutant::takeDamage(int damage) {
 	this->_hitPoints -= damage - 3;
+	if (_hitPoints < 0)
+		_hitPoints = 0;
+	std::cout << "Enemy <" << getType() << "> is left with <" << getHP() << "> HP" << std::endl;
 	return;
 }
 
