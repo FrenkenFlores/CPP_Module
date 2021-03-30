@@ -12,6 +12,9 @@
 
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm() : Form("", 72, 45){
+	return;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form(target, 72, 45){
 	return;

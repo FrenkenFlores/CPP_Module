@@ -12,6 +12,10 @@
 
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("", 145, 137){
+	return;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form(target, 145, 137){
 	return;
 }
