@@ -89,7 +89,7 @@ void Bureaucrat::decrementGrade() {
 void Bureaucrat::signForm(Form &form) {
 	if (_grade <= form.getSignGrade())
 	{
-		form.beSigned();
+		form.beSigned(*this);
 		std::cout << "<" << _name << "> signs <" << form.getTarget() << ">" << std::endl;
 	}
 	else

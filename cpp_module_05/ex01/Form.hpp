@@ -12,9 +12,11 @@
 
 #ifndef FORM_HPP
 #define FORM_HPP
+class Form;
 #include <string>
 #include <iostream>
 #include <exception>
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -45,7 +47,7 @@ public:
 	bool getSign() const;
 	int getExecuteGrade() const;
 	int getSignGrade() const;
-	void beSigned();
+	void beSigned(const Bureaucrat &target);
 	void beUnsigned();
 };
 

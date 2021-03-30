@@ -12,7 +12,7 @@
 
 #ifndef FORM_HPP
 #define FORM_HPP
-class Bureaucrat;
+class Form;
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -54,10 +54,10 @@ public:
 	bool getSign() const;
 	int getExecuteGrade() const;
 	int getSignGrade() const;
-	void beSigned();
+	void beSigned(const Bureaucrat &target);
 	void beUnsigned();
 	void execute(Bureaucrat const & executor) const;
-	virtual void formFunction() const;
+	virtual void formFunction() const = 0;
 };
 
 std::ostream & operator<<(std::ostream &out, const Form & form);

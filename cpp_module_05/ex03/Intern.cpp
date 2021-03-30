@@ -18,8 +18,8 @@ Intern::Intern() {
 	Form *presidentialPardon = new PresidentialPardonForm();
 
 	pushForm(robotoMyRequest, "robotomy request");
-	pushForm(shrubberyCreation, "presidential pardon");
-	pushForm(presidentialPardon, "shrubbery creation");
+	pushForm(shrubberyCreation, "shrubbery creation");
+	pushForm(presidentialPardon, "presidential pardon");
 	return;
 }
 

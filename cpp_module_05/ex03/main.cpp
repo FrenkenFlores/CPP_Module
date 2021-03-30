@@ -15,27 +15,38 @@
 
 int main(void) {
 	Intern bob;
-	Form* form1;
+	Bureaucrat Adam("Adam", 40);
+	Bureaucrat Jacob("Jacob", 1);
+	Form *form1;
+	Form *form2;
+	Form *form3;
 	try {
-		form1 = bob.makeForm("robotomy request","Bob");
+		form1 = bob.makeForm("robotomy request","robo");
+		Adam.signForm(*form1);
+		Jacob.executeForm(*form1);
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		form1 = bob.makeForm("presidential pardon","Jack");
+		form2 = bob.makeForm("presidential pardon","pres");
+		Adam.signForm(*form2);
+		Jacob.executeForm(*form2);
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
-	}try {
-		form1 = bob.makeForm("shrubbery creation","Adam");
 	}
-	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
-	}
-	Form* form2;
 	try {
-		form2 = bob.makeForm("Billy", "Bob");
+		form3 = bob.makeForm("shrubbery creation","tree");
+		Adam.signForm(*form3);
+		Jacob.executeForm(*form3);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+	Form* form4;
+	try {
+		form4 = bob.makeForm("Billy", "Bob");
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;

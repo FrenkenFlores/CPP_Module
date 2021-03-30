@@ -12,7 +12,7 @@
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
-class Form;
+class Bureaucrat;
 #include <string>
 #include <iostream>
 #include <exception>

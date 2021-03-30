@@ -18,8 +18,8 @@ class PresidentialPardonForm : public Form {
 public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(std::string const &target);
-	PresidentialPardonForm(PresidentialPardonForm const &);
-	PresidentialPardonForm &operator=(PresidentialPardonForm const &);
+	PresidentialPardonForm(PresidentialPardonForm const &src);
+	PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 	~PresidentialPardonForm();
 	void formFunction() const;
 };

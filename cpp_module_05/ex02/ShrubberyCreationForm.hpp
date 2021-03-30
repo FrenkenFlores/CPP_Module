@@ -22,7 +22,7 @@ public:
 	ShrubberyCreationForm(const ShrubberyCreationForm &src);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
 	~ShrubberyCreationForm();
-	void        formFunction() const;
+	void formFunction() const;
 };
 
 #endif

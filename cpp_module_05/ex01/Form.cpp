@@ -73,7 +73,9 @@ std::string Form::getName() const{
 	return _name;
 }
 
-void Form::beSigned() {
+void Form::beSigned(const Bureaucrat &target) {
+	if (target.getGrade() > getSignGrade())
+		throw GradeTooLowException();
 	_signed = 1;
 	return;
 }

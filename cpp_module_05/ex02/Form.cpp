@@ -78,13 +78,10 @@ void Form::setTarget(std::string target) {
 	return;
 }
 
-void Form::beSigned() {
+void Form::beSigned(const Bureaucrat &target) {
+	if (target.getGrade() > getSignGrade())
+		throw GradeTooLowException();
 	_signed = 1;
-	return;
-}
-
-void Form::beUnsigned() {
-	_signed = 0;
 	return;
 }
 
@@ -98,10 +95,6 @@ int Form::getExecuteGrade() const{
 
 int Form::getSignGrade() const{
 	return _gradeRequiredToSign;
-}
-
-void Form::formFunction() const{
-	return;
 }
 
 void    Form::execute(Bureaucrat const &executor) const {

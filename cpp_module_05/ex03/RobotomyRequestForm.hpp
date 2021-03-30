@@ -20,11 +20,10 @@ class RobotomyRequestForm : public Form {
 public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(std::string const &target);
-	RobotomyRequestForm(RobotomyRequestForm const &);
-	RobotomyRequestForm &operator=(RobotomyRequestForm const &);
+	RobotomyRequestForm(RobotomyRequestForm const &src);
+	RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 	~RobotomyRequestForm();
 	void formFunction() const;
-
 };
 
 
