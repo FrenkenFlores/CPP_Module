@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/31 16:16:22 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/31 16:16:23 by fflores          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.hpp"
 
 void * serialize( void )
@@ -9,6 +21,7 @@ void * serialize( void )
 	int		i;
 	int		n;
 
+	srand(time(NULL));
 	std::string random = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	for (i = 0; i < 24; i++)
 	{
@@ -39,7 +52,7 @@ void * serialize( void )
 Data * deserialize( void * raw )
 {
 	Data *data = new Data;
-	Data *tmp = static_cast<Data *>(raw);
+	Data *tmp = reinterpret_cast<Data *>(raw);
 	data->str1 = tmp->str1;
 	data->randNumber = tmp->randNumber;
 	data->str2 = tmp->str2;

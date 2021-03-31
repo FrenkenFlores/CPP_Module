@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/31 16:16:15 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/31 16:16:15 by fflores          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.hpp"
 
 int		main(void)
 {
-	srand(static_cast<unsigned int>(time(NULL)));
 	void *serial;
 	Data *data;
 
@@ -13,6 +24,6 @@ int		main(void)
 	data = deserialize(serial);
 	std::cout << data->str1 << " | " << data->randNumber << " | " << data->str2 << std::endl;
 	delete data;
-	delete (static_cast<Data *>(serial));
+	delete (reinterpret_cast<Data *>(serial));
 	return 0;
 }

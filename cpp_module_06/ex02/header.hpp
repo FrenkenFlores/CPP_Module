@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/31 16:16:12 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/31 16:16:12 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/31 16:16:25 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/31 16:16:25 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,22 @@
 #include <cstdlib>
 #include <cmath>
 #include <iomanip>
-struct Data {
-	std::string str1;
-	std::string str2;
-	int randNumber;
+
+#define PRINT(str) std::cout << "\033[1;35m" << str << "\033[0m" << std::endl
+
+
+class Base {
+public:
+	virtual ~Base(){};
 };
 
-void * serialize( void );
-Data * deserialize(void * raw);
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
+
+
+Base * generateRandomClass( void );
+void identifyClassByPointer(Base * ptr);
+void identifyClassByReference(Base & ptr);
 
 #endif

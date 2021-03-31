@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Convert.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/31 16:16:02 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/31 16:16:03 by fflores          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Convert.hpp"
 
 Convert::Convert() {
@@ -8,7 +20,7 @@ Convert::Convert(const std::string input) {
 	_input = input;
 }
 
-Convert::Convert(const Convert &src) {
+Convert::Convert(csonst Convert &src) {
 	*this = src;
 	return;
 }

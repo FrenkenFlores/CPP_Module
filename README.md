@@ -68,3 +68,14 @@ https://medium.com/@manojddesilva/some-useful-facts-to-know-when-using-c-excepti
 
 
 https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm#:~:text=A%20C%2B%2B%20exception%20is%20a,try%2C%20catch%2C%20and%20throw
+
+
+https://en.cppreference.com/w/cpp/language/dynamic_cast
+
+
+https://en.wikipedia.org/wiki/Run-time_type_information#:~:text=In%20computer%20programming%2C%20run%2Dtime,characters%2C%20or%20to%20generic%20types.
+
+https://ecs.syr.edu/faculty/fawcett/handouts/CSE687/presentations/rtti.pdf
+
+
+https://docs.microsoft.com/ru-ru/cpp/cpp/dynamic-cast-operator?view=msvc-160

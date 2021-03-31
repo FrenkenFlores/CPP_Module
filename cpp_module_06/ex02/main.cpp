@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflores <fflores@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/31 16:16:12 by fflores           #+#    #+#             */
-/*   Updated: 2021/03/31 16:16:12 by fflores          ###   ########.fr       */
+/*   Created: 2021/03/31 16:16:27 by fflores           #+#    #+#             */
+/*   Updated: 2021/03/31 16:16:27 by fflores          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <iomanip>
-struct Data {
-	std::string str1;
-	std::string str2;
-	int randNumber;
-};
+#include "header.hpp"
 
-void * serialize( void );
-Data * deserialize(void * raw);
-
-#endif
+int		main(void)
+{
+	Base *base;
+	PRINT("IDENTIFY BY POINTER");
+	for (int i = 0; i < 3; ++i) {
+		base = generateRandomClass();
+		identifyClassByPointer(base);
+		delete base;
+	}
+	PRINT("IDENTIFY BY REFERENCE");
+	for (int i = 0; i < 3; ++i) {
+		base = generateRandomClass();
+		identifyClassByReference(*base);
+		delete base;
+	}
+	return 0;
+}
