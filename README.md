@@ -85,3 +85,33 @@ https://en.cppreference.com/w/cpp/language/templates
 
 
 https://docs.microsoft.com/ru-ru/cpp/cpp/templates-cpp?view=msvc-160
+
+
+https://tproger.ru/articles/stl-cpp/#:~:text=%D0%9C%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%20%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%20%D0%B2%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%20%D0%B2%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%82%D0%BE%D1%80,%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%BE%D0%B9%20C%2B%2B%20%D0%BD%D0%B0%20%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%D1%88%D0%BD%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.
+
+
+https://ravesli.com/urok-196-standartnaya-biblioteka-shablonov-stl/
+
+
+https://habr.com/ru/post/434986/
+
+
+https://rsdn.org/article/cpp/stl.xml
+
+
+http://cppstudio.com/cat/300/
+
+
+https://vk.com/doc255577237_559859643?hash=b3b4e53556d4cfca57
+
+
+https://vk.com/doc255577237_559860051?hash=32f0f635aa7d046fdc
+
+https://www.cplusplus.com/reference/stl/
+https://en.cppreference.com/w/cpp/container/list
+https://en.cppreference.com/w/cpp/container/list/begin
+
+
+
+
+http://www.cplusplus.com/reference/stack/stack/
