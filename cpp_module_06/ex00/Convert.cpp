@@ -20,7 +20,7 @@ Convert::Convert(const std::string input) {
 	_input = input;
 }
 
-Convert::Convert(csonst Convert &src) {
+Convert::Convert(const Convert &src) {
 	*this = src;
 	return;
 }

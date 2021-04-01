@@ -79,3 +79,9 @@ https://ecs.syr.edu/faculty/fawcett/handouts/CSE687/presentations/rtti.pdf
 
 
 https://docs.microsoft.com/ru-ru/cpp/cpp/dynamic-cast-operator?view=msvc-160
+
+
+https://en.cppreference.com/w/cpp/language/templates
+
+
+https://docs.microsoft.com/ru-ru/cpp/cpp/templates-cpp?view=msvc-160
